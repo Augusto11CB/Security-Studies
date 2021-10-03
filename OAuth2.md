@@ -1,19 +1,39 @@
 # OAuth2
-OAuth 2 is an authorization framework that enables applications to obtain limited access to user accounts on an HTTP service, such as Facebook and Google. It works by delegating user authentication to the service that **hosts the user account** and authorizing third-party applications to access the user account.
+- OAuth2 tries to fix the **access delegation problem**
+- OAuth 2 is an authorization framework that enables applications to obtain limited access to user accounts on an HTTP service, such as Facebook and Google. It works by delegating user authentication to the service that **hosts the user account** and authorizing third-party applications to access the user account.
 
 ## OAuth Roles
 
-OAuth defines four roles:
+### OAuth defines four roles
 
 -   **Resource Owner**
 	- The resource owner is the _user_ who authorizes an _application_ to access their account.
 -   **Client**
-	- The client is the _application_ that wants to access the _user_’s account. Before that it must be authorized by the user, and the authorization must be validated by the API.
+	- The client is the _application_ that wants to access the _user_’s account. Before that it must be authorized by the user, and the authorization must be validated by the API. (The client consumes a resource on behalf of the resource owner.)
 -   **Resource Server**
-	- The resource server hosts the protected user accounts,
+	- The resource server hosts the protected user accounts.
 -   **Authorization Server**
-	-	The authorization server verifies the identity of the _user_ then issues access tokens to the _application_.
+	-	The authorization server verifies the identity of the _user_ then issues access tokens to the _application_. The authorization server should know how to authenticate the end user, as well as how to validate the identity of the client application, before issuing an access token.
 
+### OAuth Terminology
+- **Access Token**
+	- It is the token issued to an third-party application. The authorization server issues access tokens, and the resource server validates those. To validate an access token, the resource server may talk to the authorization server.
+- **Scope**
+	- Scope is the purpose of the token.
+	- The resource server makes sure a given token can be used only for the scope attached to it.
+- **Grant flow**
+	- Grant flow is the name given to the flow of events that happens while the third-party web application gets the token.
+	- Grant flow is defined by a **grant type**
+- **Grant types**
+	- The standard OAuth 2.0 specification identifies **five main grant types**. Each grant type outlines the steps for obtaining an access token. The **result of executing a particular grant type is an access token** that can be used to access resources 
+	- Client credentials --Suitable for authentication between two systems with no end user
+	- Resource owner password --Suitable for trusted applications
+	- Authorization code --Suitable for almost all the applications with an end user
+	- Implicit --Don’t use it!
+	- Refresh token --Used for renewing expired access tokens
+	- **OAuth 2.0 framework isn’t restricted to these five grant types**. The following are two other popular grant types that aren’t defined in the core specification:
+		- SAML Profile for OAuth 2.0 Client Authentication and Authorization Grants --Suitable for applications having single sign-on using SAML 2.0 
+		- JWT Profile for OAuth 2.0 Client Authentication and Authorization Grants --Suitable for applications having single sign-on using **OpenID Connect**
 
 ## Abstract Protocol Flow
 ![Abstract Protocol Flow](abstractFlowOAhtu2.png)
@@ -33,6 +53,12 @@ OAuth 2 defines four grant types, each of which is useful in different cases:
 
 ### Authorization Code
 Grant type based on redirection flow, which means that the application must be capable of interacting with the user-agent (i.e. the user’s web browser) and receiving API authorization codes that are routed through the user-agent.
+
+<br>
+
+- In the authorization code grant flow, the client application first initiates an authorization code request to the authorization server. This request provides the client ID of the application and a redirect URL to redirect the user when authentication is successful.
+
+
 ![Abstract Protocol Flow](authCodeFlowOAuth2.png)
 
 1. Give the user **Authorization Code Link**
@@ -60,4 +86,9 @@ In order to get the access token from the Authorization server the application (
 
 5. Getting the access token
 If the  **authorization code ** is valid, the api will send a response containing the access token. Now the application (client) is authorized and can request user's resource until the token expires or be revoked.
+
+
+![Microservices Security in Action By Wajjakkara Kankanamge Anthony Nuwan Dias, Prabath Siriwardena](https://user-images.githubusercontent.com/17462762/135758029-c232b0f8-f7b9-490a-a1c0-b793c8147e94.png)
+> Image Reference: Microservices Security in Action By Wajjakkara Kankanamge Anthony Nuwan Dias, Prabath Siriwardena
+
 
