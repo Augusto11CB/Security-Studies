@@ -48,7 +48,7 @@ An application programming interface key (API key) is a **unique identifier** (s
 #### Why and when to use API keys
 **API keys are for projects, authentication is for users**, in other words, API keys identify the calling project (application or site) making the call to an API. on the other hand, authentication tokens identify a user (person), that is using the app or site.
 
-![Abstract Protocol Flow](Resources/api_keys_overview.png)
+![Abstract Protocol Flow](resources/api_keys_overview.png)
 
 By identifying the calling project, you can use API keys to associate usage information with that project.
 

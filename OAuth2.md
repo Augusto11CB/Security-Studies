@@ -36,7 +36,7 @@
 		- JWT Profile for OAuth 2.0 Client Authentication and Authorization Grants --Suitable for applications having single sign-on using **OpenID Connect**
 
 ## Abstract Protocol Flow
-![Abstract Protocol Flow](abstractFlowOAhtu2.png)
+![Abstract Protocol Flow](resources/abstractFlowOAhtu2.png)
 1. Application (client) request to the user the authorization to access user's service resources.
 2. By approving the request of the application (client) the user provides to the application an **authorization grant**
 3. The application request an access token from the authorization server. It also send the **authorization grant** acquired from the previous step and its own identity.
@@ -59,7 +59,7 @@ Grant type based on redirection flow, which means that the application must be c
 - In the authorization code grant flow, the client application first initiates an authorization code request to the authorization server. This request provides the client ID of the application and a redirect URL to redirect the user when authentication is successful.
 
 
-![Abstract Protocol Flow](authCodeFlowOAuth2.png)
+![Abstract Protocol Flow](resources/authCodeFlowOAuth2.png)
 
 1. Give the user **Authorization Code Link**
 `https://google.com/v1/oauth/authorize?response_type=code&client_id=CLIENT_ID&redirect_uri=CALLBACK_URL&scope=read`
@@ -92,3 +92,5 @@ If the  **authorization code ** is valid, the api will send a response containin
 > Image Reference: Microservices Security in Action By Wajjakkara Kankanamge Anthony Nuwan Dias, Prabath Siriwardena
 
 
+## OpenID Connect
+OpenID Connect is built on top of OAuth 2.0 as an additional identity layer. It uses the concept of an ID token. An ID token is a JWT that contains authenticated user information, including user claims and other relevant attributes. 
