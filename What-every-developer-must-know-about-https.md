@@ -66,5 +66,10 @@ The **process to established a secure connection** to transmit messages is calle
     - Public Key Pinning
     - Ensures a client will only accept predefined certs
 
+## Cool Websites
+- https://badssl.com/
+- https://www.ssllabs.com/ssltest/
+- [How to generate a self-signed SSL certificate using OpenSSL](https://stackoverflow.com/questions/10175812/how-to-generate-a-self-signed-ssl-certificate-using-openssl)
+
 ## Reference
 - [Web Server Management: Securing Access to Web Servers - University of Cambridge Computing Service](https://www.cl.cam.ac.uk/~jw35/courses/using_https/html/book1.htm)
