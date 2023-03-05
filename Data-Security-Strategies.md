@@ -62,3 +62,12 @@ Tokenization is the practice of utilizing a random and opaque “token” value 
 Tokens are not mathematically related to the original data, which makes them more secure against attacks such as brute-force decryption or dictionary attacks. It's worth noting that tokens can still be vulnerable to attacks such as **token guessing**, where an attacker tries to guess valid tokens in order to access sensitive data. 
 
 The relationship between the token and the original data that is maintained through the use of a tokenization system. The **tokenization system generates a unique token** for each piece of sensitive data that needs to be tokenized, **and the token is then stored in a database alongside the original data**.
+
+## Masking
+Masking: This strategy involves replacing sensitive data with fictitious data that has the same format as the original data. Masking is often used to protect data during development or testing, and can help ensure that sensitive data is not exposed during these processes.
+
+## Obfuscation  
+Obfuscation: This strategy involves intentionally making the data difficult to understand or read, while still maintaining its functionality. Obfuscation is often used in software development to protect intellectual property and prevent reverse engineering.
+
+## Anonymization
+Anonymization: This strategy involves removing or altering personal identifying information from the data to protect the privacy of individuals. Anonymization is often used in data analysis and research to protect the identities of individuals while still allowing for meaningful analysis of the data.
