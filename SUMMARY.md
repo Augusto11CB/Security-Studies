@@ -1,8 +1,7 @@
 # Table of contents
 
 * [Security Studies](README.md)
-* [A](<README (1).md>)
-* [SSL Certificate Tools](ssl-certificate-tools-1.md)
+* [SSL Certificate Tools](ssl-certificate-tools.md)
 
 ## OpenSSL
 
