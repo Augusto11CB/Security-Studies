@@ -2,6 +2,7 @@
 
 * [Security Studies](README.md)
 * [SSL Certificate Tools](ssl-certificate-tools.md)
+* [Server Name Indication (SNI)](server-name-indication-sni.md)
 
 ## OpenSSL
 
